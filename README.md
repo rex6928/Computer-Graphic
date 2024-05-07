@@ -2,8 +2,8 @@
 
  ml5.js 활용 컴퓨터 그래픽스 개별 과제 안내서
 
- 
-
+<details>
+ <summary>개별 과제 안내서</summary>
 1. 개요
 
  
@@ -171,3 +171,6 @@
 1. github에 올린다. 링크를 제출한다.
 
 2. 작성소감도 github에 올린다.
+</details>
+
+
