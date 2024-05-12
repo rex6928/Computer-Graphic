@@ -239,7 +239,57 @@
 </html>
 
 ```
+### sketch.js  코드
 
+```
+let classifier; // 변수 classifier를 선언하여 ml5.imageClassifier('MobileNet')으로 초기화할 예정입니다.
+let img; // 변수 img를 선언하여 이미지를 저장할 예정입니다.
+
+function readURL(input) {
+    // .result 클래스를 가진 요소가 존재한다면 제거합니다.
+    if(document.querySelector(".result")){
+        document.querySelector(".result").remove();
+    }
+
+    // 사용자가 파일을 선택했고, 선택한 파일이 존재한다면 실행합니다.
+    if (input.files && input.files[0]) {
+        var reader = new FileReader(); // FileReader 객체를 생성합니다.
+        reader.onload = function (e) {
+            classifier = ml5.imageClassifier('MobileNet'); // MobileNet 모델을 사용하여 이미지 분류기를 초기화합니다.
+            img = loadImage(e.target.result); // 선택한 이미지를 로드합니다.
+            classifier.classify(img, gotResult); // 분류기를 사용하여 이미지를 분류하고 결과를 콜백 함수 gotResult에 전달합니다.
+            document.getElementById('preview').src = e.target.result; // 선택한 이미지를 미리보기에 표시합니다.
+        };
+        reader.readAsDataURL(input.files[0]); // 파일을 읽어 데이터 URL로 변환합니다.
+    }
+}
+
+// function preload(){
+//     classifier = ml5.imageClassifier('MobileNet');
+//     img = loadImage('images/cat3.jpg');
+// }
+
+function setup(){
+    // createCanvas(400, 400);
+    // classifier.classify(img, gotResult);
+    // image(img, 0, 0);
+}
+
+// 분류 결과가 도착했을 때 실행되는 콜백 함수입니다.
+function gotResult(error, results){
+    if(error){ // 오류가 발생했을 경우 오류를 콘솔에 기록합니다.
+        console.log(error);
+    } else {
+        //console.log(results);
+        var newDiv = document.createElement("div"); // 새로운 div 요소를 생성합니다.
+        newDiv.classList.add("result"); // 생성한 div에 'result' 클래스를 추가합니다.
+        var newText = document.createTextNode('Label : ' + results[0].label + ' / Confidence : ' + nf(results[0].confidence, 0, 2)); // 분류 결과를 텍스트로 만듭니다.
+        newDiv.appendChild(newText); // 새로운 텍스트를 생성한 div에 추가합니다.
+        document.body.insertBefore(newDiv, document.getElementById("preview").nextSibling); // 새로운 div를 삽입합니다.
+    }
+}
+
+```
 
 
 
