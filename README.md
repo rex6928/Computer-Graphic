@@ -288,15 +288,17 @@ function gotResult(error, results){
         document.body.insertBefore(newDiv, document.getElementById("preview").nextSibling); // 새로운 div를 삽입합니다.
     }
 }
-
+---
 ```
 ### p5.js에서의 코드 실행 결과
 ![이미지_130](https://github.com/rex6928/Computer-Graphic/assets/162276764/c00b1dce-a374-4f43-8868-bb94f2700d69)
 
-
-
-
-
+개나 고양이 사진을 선택해 주면 하단에 어떤 라벨을 가졌는지 알려 준다. 
+---
+![이미지1](https://github.com/rex6928/Computer-Graphic/assets/162276764/acfe075b-2c73-40ed-b3fa-46fbddb0a125)
+---
+![이미지2](https://github.com/rex6928/Computer-Graphic/assets/162276764/375df1ba-ba22-4341-bb40-99d1d9f11ed9)
+---
 
 
 
