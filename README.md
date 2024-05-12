@@ -177,13 +177,14 @@
 
 ### index.html 코드
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <!-- 문서 설정 -->
-        <meta charset="UTF-8"> <!-- 문자 인코딩 설정 -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 반응형 뷰포트 설정 -->
-        <title>Document</title> <!-- 문서 제목 -->
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 문서 설정 -->
+    <meta charset="UTF-8"> <!-- 문자 인코딩 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 반응형 뷰포트 설정 -->
+    <title>Document</title> <!-- 문서 제목 -->
 
     <!-- 외부 라이브러리 및 스타일 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script> <!-- p5.js 라이브러리 -->
@@ -237,6 +238,7 @@
 </body>
 </html>
 
+```
 
 
 
