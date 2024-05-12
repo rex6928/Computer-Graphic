@@ -290,6 +290,7 @@ function gotResult(error, results){
 }
 
 ```
+![이미지_130](https://github.com/rex6928/Computer-Graphic/assets/162276764/c00b1dce-a374-4f43-8868-bb94f2700d69)
 
 
 
