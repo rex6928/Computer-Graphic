@@ -175,41 +175,67 @@
 2. 작성소감도 github에 올린다.
 </details>
 
+### index.html 코드
 
-##생성 모델을 활용한 추상적인 이미지 생성 (p5.js 활용)
-과제 목표: p5.js 라이브러리와 생성 모델을 결합하여 추상적인 이미지를 생성하는 기술을 익히는 것, 창의적인 사고와 프로그래밍 능력을 발휘하여 독창적인 이미지를 제작하는 것, 코드의 명확성과 작품의 완성도를 높이는 것
-과제 내용:
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <!-- 문서 설정 -->
+        <meta charset="UTF-8"> <!-- 문자 인코딩 설정 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 반응형 뷰포트 설정 -->
+        <title>Document</title> <!-- 문서 제목 -->
 
-모델 선택:
-TensorFlow.js 또는 ml5.js에서 제공하는 생성 모델 중 하나를 선택합니다.
-예시:
-StyleGAN2
-Pix2Pix
-DCGAN
-데이터 준비:
-생성 모델 학습에 사용할 데이터를 준비합니다.
-예시:
-추상적인 이미지 데이터 세트
-자연 이미지 데이터 세트
-사용자 정의 이미지
-모델 학습:
-선택한 생성 모델을 사용하여 데이터를 학습합니다.
-학습 과정을 최적화하기 위해 하이퍼파라미터 조정을 수행합니다.
-이미지 생성:
-학습된 모델을 사용하여 추상적인 이미지를 생성합니다.
-p5.js 라이브러리를 활용하여 다양한 그래픽 효과를 적용합니다.
-예시:
-색상 조작
-변형
-합성
-사용자 상호 작용:
-사용자가 이미지 생성 과정에 참여할 수 있도록 상호 작용 기능을 추가합니다.
-예시:
-마우스 또는 키보드 입력을 통한 제어
-실시간 이미지 생성
-프레젠테이션:
-제작 과정, 코드, 결과물을 설명하는 프레젠테이션 자료를 준비합니다.
+    <!-- 외부 라이브러리 및 스타일 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script> <!-- p5.js 라이브러리 -->
+    <script src="https://unpkg.com/ml5@0.3.1/dist/ml5.min.js"></script> <!-- ml5.js 머신러닝 라이브러리 -->
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        } <!-- body 스타일 설정 -->
 
+        #files {
+            margin: 10px;
+        } <!-- 파일 입력 요소 스타일 설정 -->
+        #preview {
+            width: 500px;
+            height: 500px;
+            overflow: hidden;
+        } <!-- 미리보기 이미지 스타일 설정 -->
+
+        img {
+            object-fit: cover;
+        } <!-- 이미지 스타일 설정 -->
+
+        #defaultCanvas0{
+            display: none;
+        } <!-- 기본 캔버스 숨김 -->
+        .result{
+            width: 500px;
+            text-align: left;
+            margin-top: 16px;
+            font-size: 18px;
+        } <!-- 결과 텍스트 스타일 설정 -->
+    </style>
+</head>
+<body>
+
+    <!-- 페이지 제목 -->
+    <h1>머신러닝 Example : ML5.js를 개, 고양이 품종 알아 보기</h1>
+
+    <!-- 사용자가 자신의 사진을 선택할 수 있는 파일 입력 요소 -->
+    <p>분석할 이미지를 선택해 주세요.</p>
+    <input type='file' id="files" onchange="readURL(this);" />
+    <!-- 이미지를 미리보기할 요소 -->
+    <img id="preview" src="images/cat.jpg" alt="your image" />    
+
+    <!-- 사용자 정의 스크립트 -->
+    <script src="sketch.js"></script>
+    
+</body>
+</html>
 
 
 
